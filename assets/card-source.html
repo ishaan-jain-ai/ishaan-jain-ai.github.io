@@ -1,0 +1,53 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  body { background: #fcfcfb; color: #1b1c1e; font-family: system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif; }
+  .card { box-sizing: border-box; width: 1200px; height: 630px; padding: 56px 72px 48px; display: flex; flex-direction: column; }
+  .kicker { font-size: 22px; color: #686b72; letter-spacing: 0.01em; }
+  .kicker b { color: #1d5fb8; font-weight: 650; }
+  h1 { margin: 18px 0 0; font-size: 68px; line-height: 1.1; font-weight: 750; letter-spacing: -0.025em; }
+  h1 span { color: #2a7bd5; }
+  .chart-title { margin-top: 48px; font-size: 22px; color: #45484d; }
+  .chart-title b { color: #1b1c1e; font-weight: 650; }
+  svg { display: block; margin-top: 8px; }
+  .foot { margin-top: auto; font-size: 20px; color: #686b72; }
+</style></head>
+<body>
+<div class="card">
+  <div class="kicker"><b>LLM evals</b> · ishaan-jain-ai.github.io</div>
+  <h1>Your LLM judge says v2 wins.<br><span>It might be a tie.</span></h1>
+  <div class="chart-title"><b>o3 vs ChatGPT-4o</b>: how often o3 wins</div>
+  <!-- x scale: 40% at x=360, 80% at x=1036, 16.9 px per point -->
+  <svg width="1056" height="164" viewBox="0 0 1056 164" font-family="system-ui, -apple-system, Helvetica, Arial, sans-serif">
+    <g stroke="#e2e2dc" stroke-width="1">
+      <line x1="360.0" y1="8" x2="360.0" y2="124"/>
+      <line x1="698.0" y1="8" x2="698.0" y2="124"/>
+      <line x1="867.0" y1="8" x2="867.0" y2="124"/>
+      <line x1="1035.0" y1="8" x2="1035.0" y2="124"/>
+    </g>
+    <line x1="529.0" y1="8" x2="529.0" y2="124" stroke="#9a9da3" stroke-width="2"/>
+    <line x1="360.0" y1="124" x2="1036.0" y2="124" stroke="#c9c9c2" stroke-width="1"/>
+    <g font-size="19" fill="#686b72" text-anchor="middle">
+      <text x="360.0" y="152" text-anchor="start">40%</text>
+      <text x="529.0" y="152" fill="#1b1c1e" font-weight="600">50% = tie</text>
+      <text x="698.0" y="152">60%</text>
+      <text x="867.0" y="152">70%</text>
+      <text x="1036.0" y="152" text-anchor="end">80%</text>
+    </g>
+    <g font-size="22" fill="#1b1c1e">
+      <text x="0" y="48"><tspan font-weight="650">People</tspan>, all Arena votes: <tspan font-weight="650">52%</tspan></text>
+      <text x="0" y="100"><tspan font-weight="650">Four LLM judges</tspan>: <tspan font-weight="650">62–76%</tspan></text>
+    </g>
+    <line x1="522.2" y1="40" x2="593.2" y2="40" stroke="#2a7bd5" stroke-width="5" stroke-linecap="round"/>
+    <rect x="546.7" y="29" width="22" height="22" fill="#2a7bd5" stroke="#fcfcfb" stroke-width="3" transform="rotate(45 557.7 40)"/>
+    <g fill="#e8663a" stroke="#fcfcfb" stroke-width="3">
+      <circle cx="730.1" cy="92" r="12"/>
+      <circle cx="856.9" cy="92" r="12"/>
+      <circle cx="930.4" cy="92" r="12"/>
+      <circle cx="961.6" cy="92" r="12"/>
+    </g>
+  </svg>
+  <div class="foot">Four open judges vs 135,634 LMArena human votes · github.com/ishaan-jain-ai/wrong-winner</div>
+</div>
+</body></html>

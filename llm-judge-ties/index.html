@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your LLM judge says v2 wins. It might be a tie. · Ishaan Jain</title>
+<meta name="description" content="On 15 close LMArena comparisons, four LLM judges each named a winner people didn't back on 5 to 7 of them. More test items made that worse. 25 human labels helped.">
+<meta name="author" content="Ishaan Jain">
+<link rel="canonical" href="https://ishaan-jain-ai.github.io/llm-judge-ties/">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Ishaan Jain">
+<meta property="og:title" content="Your LLM judge says v2 wins. It might be a tie.">
+<meta property="og:description" content="On 15 close LMArena comparisons, four LLM judges each named a winner people didn't back on 5 to 7 of them. More test items made that worse. 25 human labels helped.">
+<meta property="og:url" content="https://ishaan-jain-ai.github.io/llm-judge-ties/">
+<meta property="og:image" content="https://ishaan-jain-ai.github.io/assets/card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="o3 vs ChatGPT-4o: all LMArena votes put o3 at 52%, a tie; four LLM judges put it at 62 to 76%.">
+<meta property="article:published_time" content="2026-11-24">
+<meta property="article:author" content="Ishaan Jain">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Your LLM judge says v2 wins. It might be a tie.">
+<meta name="twitter:description" content="On 15 close LMArena comparisons, four LLM judges each named a winner people didn't back on 5 to 7 of them. More test items made that worse. 25 human labels helped.">
+<meta name="twitter:image" content="https://ishaan-jain-ai.github.io/assets/card.png">
+<meta name="twitter:image:alt" content="o3 vs ChatGPT-4o: all LMArena votes put o3 at 52%, a tie; four LLM judges put it at 62 to 76%.">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BlogPosting",
+ "headline": "Your LLM judge says v2 wins. It might be a tie.",
+ "datePublished": "2026-11-24",
+ "author": {"@type": "Person", "name": "Ishaan Jain", "url": "https://ishaan-jain-ai.github.io/"},
+ "image": "https://ishaan-jain-ai.github.io/assets/card.png",
+ "url": "https://ishaan-jain-ai.github.io/llm-judge-ties/"}
+</script>
+</head>
+<body>
+
+<header class="wrap site-header">
+  <a class="name" href="../">Ishaan Jain</a>
+  <nav aria-label="Elsewhere">
+    <a href="https://github.com/ishaan-jain-ai">GitHub</a>
+    <a href="https://www.linkedin.com/in/ishanjain4/">LinkedIn</a>
+  </nav>
+</header>
+
+<main class="wrap">
+<article>
+
+<h1><span class="sentence">Your LLM judge says v2 wins.</span> <span class="sentence">It might be a tie.</span></h1>
+<p class="meta"><time datetime="2026-11-24">24 November 2026</time> · 8 min read</p>
+
+<p class="lede">If an LLM judge says prompt v2 beats v1 by a few points, treat it as a tie until people agree. On 15 close comparisons from LMArena, four open LLM judges each named a winner people didn't back on 5 to 7 of them. A bigger test set made that more likely, not less. Big gaps were safe: no judge ever picked the wrong side of a clear comparison.</p>
+
+<figure class="breakout w-md">
+  <a href="../assets/fig2_more_items.png"><img src="../assets/fig2_more_items.png" width="1800" height="1280" alt="More items make the judges surer of winners people don't back: on 15 close pairs, unbacked winners rise from 18–26% at 25 items to 38–46% at 80 for four judges, and from 8% to 14% for human votes"></a>
+  <figcaption>Click or tap a chart to open it full size.</figcaption>
+</figure>
+
+<h2>The eval you already run</h2>
+
+<p>You have v1 in production and a candidate v2: a new prompt, a new model, a new retrieval setup. You run both on 25 to 100 test inputs and ask an LLM judge which answer is better for each. If v2 wins and the 95% interval clears 50%, you ship it.</p>
+
+<p>That works when v2 is clearly better or clearly worse. The risky case is the common one: v2 is about as good as v1. You can't check a judge on your own app without people's verdicts, so this study used a public dataset that has them.</p>
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th scope="col">In your eval</th><th scope="col">In this study</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>v1 vs v2, about equally good</td><td>15 close LMArena pairs, such as ChatGPT-4o vs o3, within 2 points of a tie</td></tr>
+    <tr><td>Your test set</td><td>80 real user prompts per pair, each answered by both models</td></tr>
+    <tr><td>Your LLM judge</td><td>Four open models from 8B to about 1T parameters, judging each item once</td></tr>
+    <tr><td>The truth you don't have</td><td>All English single-turn Arena votes on the pair (a Bradley–Terry fit)</td></tr>
+    <tr><td>A clear improvement</td><td>10 clear pairs, 7 to 24 points from a tie, as a control</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>A judge names a winner when its 95% interval on the win rate clears 50%, the rule a careful team already uses.</p>
+
+<h2>On close calls, judges invent winners</h2>
+
+<p>Take ChatGPT-4o vs o3. Across all Arena votes, o3 wins 51.7% (95% interval 49.6–53.8%): a tie. On the same 80 prompts, all four judges picked o3, at 62% to 76%, and every interval cleared 50%. A team running this eval would ship o3 on a confident result that people don't back.</p>
+
+<p>Across all 15 close pairs:</p>
+
+<ul>
+  <li>Each judge named a winner people don't back on 5 to 7 pairs.</li>
+  <li>The Arena votes on the same 80 prompts named one on none.</li>
+  <li>Every bad call was a winner invented on a tie. No judge ever named the loser of a pair people can separate.</li>
+  <li>On average the judges sat 10 to 13 points from a tie. All Arena votes sat 1.5 points from it.</li>
+</ul>
+
+<p>The chart shows every close pair: blue is all Arena votes, orange is a judge on the 80 prompts, filled when it names a winner.</p>
+
+<figure class="breakout w-lg">
+  <a href="../assets/fig1_close_pairs.png"><img src="../assets/fig1_close_pairs.png" width="2730" height="1753" loading="lazy" alt="On close pairs, LLM judges pick winners that people don't: each judge's 80-item win rate and interval against all Arena votes, for all 15 close pairs"></a>
+</figure>
+
+<h2>More test cases made it worse</h2>
+
+<p>The usual fix for a shaky result is a bigger test set. Here it backfired. In 2,000 simulated evals per pair and size, the share naming a winner people don't back rose from 18–26% at 25 items to 38–46% at 80, as the chart at the top shows.</p>
+
+<p>The reason is simple. A 95% interval only covers luck in which items you drew, not the judge's own lean. More items shrink the interval, the lean stays the same size, and eventually the lean looks like a real win.</p>
+
+<p class="pull">More data doesn't fix a biased judge. It makes the bias look like evidence.</p>
+
+<p>Human votes on the same items went from 8% to 14%. On an exact tie a 95% interval allows 5%; the human line runs higher because, for a few pairs, those 80 votes lean further from a tie than all of the pair's votes do.</p>
+
+<h2>Bigger judges, reasoning and panels didn't help</h2>
+
+<ul>
+  <li><strong>Size:</strong> no trend from 8B to about 1T. Unbacked winners on 7, 5, 6 and 5 of 15 close pairs, smallest judge to largest.</li>
+  <li><strong>Reasoning:</strong> Mistral Large 4, the one judge that reasons, was lowest in the simulated 80-item evals (38%). That is a single judge, not a trend.</li>
+  <li><strong>A panel:</strong> the judges agree with each other, not with people. All four picked o3 over ChatGPT-4o, Grok 3 over ChatGPT-4o and DeepSeek R1 over Gemini 2.5 Flash, where people see ties. A majority vote would make the same calls. This rests on a handful of pairs: three or more judges shared an invented winner on 4 of the 15.</li>
+  <li><strong>Self-preference:</strong> no judge favoured its own family's models more than the other judges did. This is exploratory, with 4 to 9 pairs per family.</li>
+</ul>
+
+<h2>What helped: 25 labels from the same comparison</h2>
+
+<p>Have a person label a random sample of the same test items, then combine those labels with the judge. This study used PPI++ (power-tuned prediction-powered inference), which weights the judge by how well it tracks people.</p>
+
+<p>With 25 labels in an 80-item eval:</p>
+
+<ul>
+  <li>Unbacked winners on close pairs fell from 38–46% with the judge alone to about 8%.</li>
+  <li>On clear pairs, the real winner was still found in 63–65% of evals, and in 76–77% with 50 labels.</li>
+</ul>
+
+<p>Two results surprised me:</p>
+
+<ul>
+  <li><strong>The judge added almost nothing on top of the labels.</strong> PPI++ put a weight of 0.06 to 0.29 on the judge, where 1 means trust it fully. The 25 labels alone did about as well. Plain PPI, which trusts the judge fully, found fewer real winners than the labels alone (54–61% against 75% at 50 labels).</li>
+  <li><strong>A correction from another comparison doesn't transfer.</strong> Reusing 50 labels from a different pair still left 24–38% unbacked winners. The judge leans differently on every pair.</li>
+</ul>
+
+<p>On a true tie, 25 labels won't name a winner. They'll say the difference is too small to measure. That is the right answer: decide on cost, latency or safety instead.</p>
+
+<p>The chart shows what 10, 25 and 50 labels buy.</p>
+
+<figure class="breakout w-lg">
+  <a href="../assets/fig3_human_labels.png"><img src="../assets/fig3_human_labels.png" width="2640" height="1320" loading="lazy" alt="A few human labels stop the invented winners, but the judge adds little on top: unbacked winners and real winners found with 10, 25 and 50 labels for PPI, PPI++, the labels alone and a reused correction"></a>
+</figure>
+
+<h2>Before you ship v2</h2>
+
+<ol>
+  <li><strong>Run every item in both answer orders, and count a flip as a tie.</strong> Judges changed their verdict on 26–51% of items when the answers swapped, mostly toward the first one. That is about where GPT-4 was in 2023 (35% on near-identical answers).</li>
+  <li><strong>Read the judge's win rate.</strong> Above 80% or below 20%, trust the direction: on the 10 clear pairs no call went the wrong way. Between 20% and 80%, don't trust the judge alone. On pairs people call a tie, judges reached 76%.</li>
+  <li><strong>Don't add test items to settle a close call.</strong> It makes an unbacked winner more likely.</li>
+  <li><strong>Label 25 items yourself,</strong> picked at random from this comparison. Combine them with the judge (PPI++) or use them alone.</li>
+  <li><strong>Still no clear winner? Call it a tie.</strong> Decide on cost, latency or safety, and say so.</li>
+  <li><strong>Re-label for each new comparison.</strong> Last month's correction doesn't carry over.</li>
+</ol>
+
+<p class="note">The 80% line is a rough guide set from these pairs, not a measured threshold.</p>
+
+<h2>Check your own eval in one command</h2>
+
+<p>I turned the checklist into a small open-source CLI, <code>wrong-winner</code>. Install it from a clone of <a href="https://github.com/ishaan-jain-ai/wrong-winner">the repo</a> with <code>pip install -e .</code>, then give it one row per test item with the judge's verdict in each answer order:</p>
+
+<pre class="breakout" data-label="verdicts.csv"><code>id,judge_a_first,judge_b_first
+q1,b,tie
+q2,a,
+q3,b,b</code></pre>
+
+<pre class="breakout"><code>wrong-winner check verdicts.csv --a v1 --b v2</code></pre>
+
+<p>Here is its result on ChatGPT-4o vs o3 with the Gemma 4 31B judge (trimmed):</p>
+
+<pre class="breakout" data-label="Output"><code>Judge alone
+  o3 wins 74.4% (ties count half; 95% interval 65.3–83.4%)
+  That interval covers sampling noise, not the judge's own bias.
+
+Result: NOT PROVEN
+  The judge favours o3 by 24 points and its interval excludes a tie, but that is not
+  enough. In Phase 2, on pairs people saw as ties, judges went up to 26 points from a
+  tie and named a winner on 5–7 of 15 pairs.
+  More test items won't fix this; human labels will.</code></pre>
+
+<p><code>wrong-winner pick verdicts.csv 25 -o labels.csv</code> picks 25 items for you to label, with the judge's verdicts hidden. Using the Arena votes as those labels:</p>
+
+<pre class="breakout" data-label="Output"><code>Your labels (25 items)
+  o3 wins 56.0% (95% interval 39.9–72.1%)
+  The judge agreed with you on 10 of 25 items (kappa 0.09).
+  Judge and labels combined (PPI++, judge weight 0.10): o3 wins 55.2% (95% interval
+  39.2–71.2%)
+
+Result: NO MEASURABLE DIFFERENCE
+  With 25 labels, ChatGPT-4o and o3 are too close to tell apart.
+  If the gap is really 5.2 points, roughly 236 labels would settle it.
+  A gap this small may not be worth chasing: decide on cost, latency or safety instead.</code></pre>
+
+<p>The exit code makes it a CI gate: 0 when v2 is shown better, 1 when it isn't, 2 on bad input. <code>--gate not-worse</code> fails only when v1 is shown better. From Python, <code>from wrong_winner import check</code>.</p>
+
+<p>Run over every Phase 2 judge and pair with no labels, it named no winner on any of the 48 results where people see a tie. It named the right winner on 24 of the 40 clear-pair results and never the wrong one. Its rule was set from these same pairs, so that is a sanity check, not an independent test.</p>
+
+<h2>What this doesn't show</h2>
+
+<ul>
+  <li><strong>Pairwise preference only.</strong> The judges answered "which is better?", not pass/fail against a rubric. I expect the same mechanism, a lean that a shrinking interval hides, in pass rates too, but didn't test it.</li>
+  <li><strong>Chat, not your app.</strong> The prompts are English, single-turn LMArena chats. A run on a real app task, such as two prompts for support replies, is the obvious next test.</li>
+  <li><strong>Four open judges.</strong> No GPT, Claude or Gemini judge was run.</li>
+  <li><strong>Small per-pair samples.</strong> With 80 items, one judge's win rate on one pair is known to about ±10 points. The claims are per group; the panel result rests on a handful of pairs.</li>
+  <li><strong>Not new in principle.</strong> Judges were already known to struggle on close pairs (Zheng et al., 2023), and Dorner, Nastl and Hardt (2025) showed why a judge no better than the models it judges can't save many labels. What this adds is the numbers a team faces at 25 to 80 items, and a label budget.</li>
+</ul>
+
+<h2>How it was run</h2>
+
+<ul>
+  <li><strong>Data:</strong> LMArena's public preference dataset, 135,634 votes from 2025 (CC BY 4.0), English single-turn votes only. Of 40 selected pairs, 25 were judged: 15 close with 80 items each, and 10 clear with 20 each.</li>
+  <li><strong>Judges:</strong> Qwen3 8B on a laptop through Ollama; Gemma 4 31B, Nemotron 3 Ultra (550B) and Mistral Large 4 (about 1T, reasoning) on NVIDIA's free endpoints. Same instructions for all, model names hidden, verdict only. 1,500 calls per judge, about 6,000 in all, for $0.</li>
+  <li><strong>Analysis:</strong> 2,000 simulated evals per pair, size and method, with Student's t intervals. The headline also holds with each pair's own votes as the truth, and with each model left out in turn.</li>
+  <li><strong>Reproduce:</strong> the saved verdicts are in the repo, so every number and chart rebuilds with no judge calls.</li>
+</ul>
+
+<h2>Sources</h2>
+
+<ul>
+  <li>Code, data and the CLI: <a href="https://github.com/ishaan-jain-ai/wrong-winner">github.com/ishaan-jain-ai/wrong-winner</a>; full results in <a href="https://github.com/ishaan-jain-ai/wrong-winner/blob/main/PHASE2.md">PHASE2.md</a></li>
+  <li><a href="https://huggingface.co/datasets/lmarena-ai/arena-human-preference-140k">LMArena arena-human-preference-140k</a>, the data (CC BY 4.0)</li>
+  <li>Zheng et al. 2023, <a href="https://arxiv.org/abs/2306.05685">Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena</a></li>
+  <li>Angelopoulos, Duchi and Zrnic 2023, <a href="https://arxiv.org/abs/2311.01453">PPI++: Efficient Prediction-Powered Inference</a></li>
+  <li>Dorner, Nastl and Hardt 2025, <a href="https://arxiv.org/abs/2410.13341">Limits to scalable evaluation at the frontier: LLM as judge won't beat twice the data</a></li>
+</ul>
+
+<aside class="about">
+  <p><strong>Ishaan Jain</strong> · AI engineer, 8+ years across ML and analytics. I build LLM and agent systems, and test whether their evals can be trusted.</p>
+  <p>I'm looking for my next role from December 2026: Senior AI Engineer, Applied AI Engineer or GenAI Engineer, remote or in Bengaluru. Find me on <a href="https://github.com/ishaan-jain-ai">GitHub</a> or <a href="https://www.linkedin.com/in/ishanjain4/">LinkedIn</a>.</p>
+</aside>
+
+</article>
+</main>
+
+<footer class="wrap site-footer">
+  <a href="../">Ishaan Jain</a> · Charts from <a href="https://github.com/ishaan-jain-ai/wrong-winner">wrong-winner</a>, on LMArena data (CC BY 4.0)
+</footer>
+
+</body>
+</html>

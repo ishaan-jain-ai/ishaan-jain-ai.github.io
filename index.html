@@ -4,54 +4,168 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ishaan Jain</title>
-<meta name="description" content="Ishaan Jain: writing and projects on evaluating LLM systems.">
+<meta name="description" content="Ishaan Jain, AI engineer. I build LLM and agent systems that people rely on at work: an aviation maintenance copilot live with a commercial airline, and a clinical appeal letter copilot that generated thousands of letters a month.">
 <meta name="author" content="Ishaan Jain">
 <link rel="canonical" href="https://ishaan-jain-ai.github.io/">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap">
 <link rel="stylesheet" href="assets/style.css">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ishaan Jain">
-<meta property="og:title" content="Ishaan Jain">
-<meta property="og:description" content="Writing and projects on evaluating LLM systems.">
+<meta property="og:title" content="Ishaan Jain, AI engineer">
+<meta property="og:description" content="I build LLM and agent systems that people rely on at work. Open to senior and lead AI engineering roles from December 2026.">
 <meta property="og:url" content="https://ishaan-jain-ai.github.io/">
-<meta property="og:image" content="https://ishaan-jain-ai.github.io/assets/card.png">
+<meta property="og:image" content="https://ishaan-jain-ai.github.io/assets/card-home.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ishaan Jain, AI engineer.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://ishaan-jain-ai.github.io/assets/card.png">
+<meta name="twitter:image" content="https://ishaan-jain-ai.github.io/assets/card-home.png">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Person",
+ "name": "Ishaan Jain",
+ "jobTitle": "AI Engineer",
+ "url": "https://ishaan-jain-ai.github.io/",
+ "sameAs": ["https://github.com/ishaan-jain-ai", "https://www.linkedin.com/in/ishanjain4/", "https://www.kaggle.com/ishaan45"]}
+</script>
+<script src="assets/check.js" defer></script>
+<script src="assets/more-items.js" defer></script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<main class="wrap home">
+<header class="page site-header">
+  <a class="name" href="./">Ishaan Jain</a>
+  <nav aria-label="Site">
+    <a href="#work">work</a>
+    <a href="#writing">writing</a>
+    <a href="now/">now</a>
+    <a href="about/">about</a>
+  </nav>
+</header>
 
-<h1>Ishaan Jain</h1>
-<p class="intro">AI engineer, 8+ years across ML and analytics. I build LLM and agent systems, and test whether their evals can be trusted.</p>
-<p>I'm looking for my next role from December 2026: Senior AI Engineer, Applied AI Engineer or GenAI Engineer, remote or in Bengaluru.</p>
-<p class="links">
-  <a href="https://github.com/ishaan-jain-ai">GitHub</a>
-  <a href="https://www.linkedin.com/in/ishanjain4/">LinkedIn</a>
-</p>
+<main id="main" class="page numbered">
 
-<h2>Writing</h2>
+<section class="intro" aria-labelledby="hi">
+  <h1 id="hi">Hi, I’m Ishaan.</h1>
+  <p class="lede">I’m an AI engineer. I build LLM and agent systems that people rely on at work.</p>
+  <p class="now-line">Founding Engineer at Flynapse.ai. Previously Lead, Analytics at Ensemble Health Partners.</p>
+  <p class="status"><span class="ok" aria-hidden="true">●</span> Open to senior and lead AI roles from December 2026 · remote in India or Bengaluru</p>
+  <ul class="links" aria-label="Contact and profiles">
+    <li><a href="mailto:ishaanjain.analytics@gmail.com">email</a></li>
+    <li><a href="https://www.linkedin.com/in/ishanjain4/">linkedin</a></li>
+    <li><a href="https://github.com/ishaan-jain-ai">github</a></li>
+    <li><a href="https://www.kaggle.com/ishaan45">kaggle</a></li>
+  </ul>
+</section>
 
-<article class="entry">
-  <h3><a href="llm-judge-ties/"><span class="sentence">Your LLM judge says v2 wins.</span> <span class="sentence">It might be a tie.</span></a></h3>
-  <p class="meta"><time datetime="2026-11-24">24 November 2026</time> · 8 min read</p>
-  <p>On 15 close LMArena comparisons, four LLM judges each named a winner people didn't back on 5 to 7 of them, and a bigger test set made it worse. What helped, and a checklist for your own A/B evals.</p>
-</article>
+<section class="numbers" aria-label="Results at a glance">
+  <dl>
+    <div><dt>−40%</dt><dd>cost on an agent workflow, cut from 11 LLM calls to <span class="nw">4–5</span></dd></div>
+    <div><dt>−25%</dt><dd>appeal-processing cost with a clinical letter copilot</dd></div>
+    <div><dt>5,000+</dt><dd>users in an organisation-wide agent rollout</dd></div>
+    <div><dt>9 → 22</dt><dd>people in the analytics team I helped grow</dd></div>
+  </dl>
+</section>
 
-<h2>Projects</h2>
+<section class="row" aria-labelledby="work">
+  <h2 class="label" id="work">Things I’ve built</h2>
+  <div class="body">
+    <article class="made">
+      <p class="where">Flynapse.ai · 2026 to now</p>
+      <h3><a href="work/aviation-maintenance-copilot/">Copilot MRO</a></h3>
+      <p>An aviation maintenance copilot, live with a commercial airline. I cut one agent workflow from 11 LLM calls to 4 or 5, making it 25% faster and 40% cheaper.</p>
+      <p class="go"><a href="work/aviation-maintenance-copilot/">case study →</a></p>
+    </article>
+    <article class="made">
+      <p class="where">Ensemble Health Partners · 2024 to 2026</p>
+      <h3><a href="work/clinical-appeal-letter-copilot/">A clinical appeal letter copilot</a></h3>
+      <p>Drafted appeal letters from past letters and clinical guidelines, with patient details removed before generation. 100+ users, thousands of letters a month, 25% lower processing cost.</p>
+      <p class="go"><a href="work/clinical-appeal-letter-copilot/">case study →</a></p>
+    </article>
+    <article class="made">
+      <p class="where">Ensemble Health Partners · 2022 to 2026</p>
+      <h3><a href="work/enterprise-copilot-agents/">From a chatbot MVP to agents for 5,000+ people</a></h3>
+      <p>A RAG chatbot MVP that grew into an SOP and policy agent for the whole organisation, followed by 5+ Microsoft Copilot agents.</p>
+      <p class="go"><a href="work/enterprise-copilot-agents/">case study →</a></p>
+    </article>
+  </div>
+</section>
 
-<article class="entry">
-  <h3><a href="https://github.com/ishaan-jain-ai/wrong-winner">wrong-winner</a></h3>
-  <p>How often does an LLM judge pick the wrong winner? Four open judges against LMArena human votes on close pairs, plus a CLI that checks whether your own A/B eval's winner is backed by evidence. Python, MIT licence.</p>
-</article>
+<section class="row" aria-labelledby="try">
+  <h2 class="label" id="try">Try this</h2>
+  <div class="body">
+    <p class="section-lede">An LLM judge says your new prompt wins. Is that real? This runs the rule from <a href="https://github.com/ishaan-jain-ai/wrong-winner">wrong-winner</a>, my open-source tool.</p>
+    <form class="check" id="check" novalidate>
+      <p class="check-q">
+        The judge preferred v2 on <input type="number" name="wins" value="52" min="0" inputmode="numeric" aria-label="Items where the judge preferred v2"> items,
+        called <input type="number" name="ties" value="15" min="0" inputmode="numeric" aria-label="Items the judge called a tie"> a tie,
+        and preferred v1 on <input type="number" name="losses" value="13" min="0" inputmode="numeric" aria-label="Items where the judge preferred v1">.
+        <span class="check-total">That’s 80 items.</span>
+      </p>
+      <p class="check-try">Or try <button type="button" data-set="52,15,13">a close call</button>, <button type="button" data-set="66,8,6">a clear win</button> or <button type="button" data-set="30,22,28">a coin flip</button>.</p>
+      <div class="verdict" aria-live="polite">
+        <p class="stamp" data-kind="warn">Not proven</p>
+        <p class="verdict-line">The judge has v2 winning 74.4% of 80 items (ties count half; 95% interval 65.9–82.9%).</p>
+        <p class="verdict-why">The judge favours v2 by 24 points and its interval excludes a tie, but that isn’t enough. In my study, on pairs people saw as ties, judges went up to 26 points from a tie and named a winner on 5 to 7 of 15 pairs. More test items won’t fix this; human labels will. Label 25 items picked at random, without looking at the judge’s verdicts, and check again.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="row" aria-labelledby="writing">
+  <h2 class="label" id="writing">Writing</h2>
+  <div class="body">
+    <article class="made">
+      <p class="where"><time datetime="2026-11-24">24 November 2026</time> · 8 minute read</p>
+      <h3><a href="llm-judge-ties/"><span class="sentence">Your LLM judge says v2 wins.</span> <span class="sentence">It might be a tie.</span></a></h3>
+      <p>Four LLM judges, 15 close LMArena comparisons: each judge named a winner people didn’t back on 5 to 7 of them, and a bigger test set made it worse.</p>
+    </article>
+    <details class="explore">
+      <summary>Explore the main finding</summary>
+      <figure class="more" id="more">
+        <p class="more-q">A comparison people call a tie, judged by an LLM:</p>
+        <ul class="choices" role="radiogroup" aria-label="Eval setup">
+          <li><button type="button" role="radio" aria-checked="false" data-step="n25">25 items</button></li>
+          <li><button type="button" role="radio" aria-checked="false" data-step="n50">50 items</button></li>
+          <li><button type="button" role="radio" aria-checked="true" data-step="n80">80 items</button></li>
+          <li><button type="button" role="radio" aria-checked="false" data-step="k10">80 + 10 human labels</button></li>
+          <li><button type="button" role="radio" aria-checked="false" data-step="k25">80 + 25 human labels</button></li>
+        </ul>
+        <p class="more-big">About <span class="more-num">42</span> in 100 evals name a winner people don’t back.</p>
+        <p class="more-note">80 items, judge alone. The interval shrinks, the judge’s lean doesn’t, and the lean starts to look like a real win.</p>
+        <ul class="bars" aria-label="Share of evals naming an unbacked winner, by judge">
+          <li class="bar"><span class="bar-name">Qwen3 8B</span><span class="bar-track"><span class="bar-fill" style="width:92.7%"></span></span><span class="bar-val">46%</span></li>
+          <li class="bar"><span class="bar-name">Gemma 4 31B</span><span class="bar-track"><span class="bar-fill" style="width:83%"></span></span><span class="bar-val">42%</span></li>
+          <li class="bar"><span class="bar-name">Nemotron 3 Ultra</span><span class="bar-track"><span class="bar-fill" style="width:86.7%"></span></span><span class="bar-val">43%</span></li>
+          <li class="bar"><span class="bar-name">Mistral Large 4</span><span class="bar-track"><span class="bar-fill" style="width:76.7%"></span></span><span class="bar-val">38%</span></li>
+          <li class="bar people"><span class="bar-name">People’s votes, same items</span><span class="bar-track"><span class="bar-fill" style="width:28.4%"></span></span><span class="bar-val">14%</span></li>
+        </ul>
+        <figcaption>2,000 simulated evals per pair and setting, on 15 close LMArena pairs. The dashed line is 5%, what a 95% interval allows on an exact tie. Bars run to 50%.</figcaption>
+      </figure>
+    </details>
+  </div>
+</section>
+
+<section class="row" aria-labelledby="elsewhere">
+  <h2 class="label" id="elsewhere">Elsewhere</h2>
+  <div class="body">
+    <ul class="plain">
+      <li><a href="https://github.com/ishaan-jain-ai/wrong-winner">wrong-winner</a>: the study’s code, data and CLI. Python, MIT licence.</li>
+      <li><a href="https://www.kaggle.com/ishaan45">Kaggle</a> Expert in Discussions and Notebooks; bronze medal, Santander Value Prediction (top 7%).</li>
+      <li>Spoke at Kaggle Days and Internshala HQ.</li>
+    </ul>
+  </div>
+</section>
 
 </main>
 
-<footer class="wrap site-footer">
-  Ishaan Jain · <a href="https://github.com/ishaan-jain-ai">GitHub</a> · <a href="https://www.linkedin.com/in/ishanjain4/">LinkedIn</a>
+<footer class="page site-footer">
+  <p class="footer-links"><a href="mailto:ishaanjain.analytics@gmail.com">ishaanjain.analytics@gmail.com</a> · <a href="https://www.linkedin.com/in/ishanjain4/">linkedin</a> · <a href="https://github.com/ishaan-jain-ai">github</a> · <a href="https://www.kaggle.com/ishaan45">kaggle</a> · <a href="about/">about</a></p>
+  <p>Resume on request. Last updated 26 November 2026.</p>
 </footer>
 
 </body>

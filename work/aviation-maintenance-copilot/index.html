@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Copilot MRO, an aviation maintenance copilot · Ishaan Jain</title>
+<meta name="description" content="Copilot MRO, an aviation maintenance copilot live with a commercial airline. I built most of its core as founding engineer at Flynapse.ai, and cut an agent workflow from 11 LLM calls to 4–5 (25% faster, 40% cheaper).">
+<meta name="author" content="Ishaan Jain">
+<link rel="canonical" href="https://ishaan-jain-ai.github.io/work/aviation-maintenance-copilot/">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="../../assets/style.css">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Ishaan Jain">
+<meta property="og:title" content="Copilot MRO, an aviation maintenance copilot">
+<meta property="og:description" content="Live with a commercial airline. An agent workflow cut from 11 LLM calls to 4–5: 25% faster, 40% cheaper.">
+<meta property="og:url" content="https://ishaan-jain-ai.github.io/work/aviation-maintenance-copilot/">
+<meta property="og:image" content="https://ishaan-jain-ai.github.io/assets/card-home.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://ishaan-jain-ai.github.io/assets/card-home.png">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="page site-header">
+  <a class="name" href="../../">Ishaan Jain</a>
+  <nav aria-label="Site">
+    <a href="../../#work">work</a>
+    <a href="../../#writing">writing</a>
+    <a href="../../now/">now</a>
+    <a href="../../about/">about</a>
+  </nav>
+</header>
+
+<main id="main" class="page">
+<article class="study">
+
+<header class="study-head">
+  <p class="crumb"><a href="../../#work">Things I’ve built</a> / Flynapse.ai</p>
+  <h1>Copilot MRO</h1>
+  <p class="dek">An aviation maintenance copilot, live with a commercial airline.</p>
+</header>
+
+<div class="row">
+  <dl class="facts label">
+    <dt>Where</dt><dd>Flynapse.ai</dd>
+    <dt>Role</dt><dd>Founding Engineer, May 2026 to now</dd>
+    <dt>Team</dt><dd>The CTO, me and a few interns</dd>
+    <dt>Users</dt><dd>About 50, at a commercial airline</dd>
+    <dt>Stack</dt><dd>Python, AWS, PostgreSQL, Weaviate, Claude, LangGraph, Arize Phoenix</dd>
+  </dl>
+  <div class="body">
+<p class="lede">Copilot MRO is Flynapse.ai’s copilot for aircraft maintenance. I joined as founding engineer in May 2026 and, working as the primary engineer alongside the CTO with a few interns, built most of its core: the agent layer, Schema Auto Discovery, the RAG workflows, multi-tenant access and tracing.</p>
+
+<h2>What I built</h2>
+
+<h3>Claude and LangGraph</h3>
+<p>I shaped the agent layer so the copilot supports both Claude and LangGraph without duplicating product logic, so choosing or comparing the two is an engineering decision, not a rewrite.</p>
+
+<h3>Fewer LLM calls</h3>
+<p>One agent workflow made 11 LLM calls. Each call adds latency and tokens, and with more steps there are more places for an answer to go wrong. I redesigned it into a path of <span class="nw">4–5</span> calls, which cut latency by 25% and cost by 40%.</p>
+
+<h3>Schema Auto Discovery</h3>
+<p>Each airline’s maintenance data is its own. Schema Auto Discovery lets the copilot use tenant-specific data safely, with controlled database access and a clear separation between discovering the data and executing SQL.</p>
+
+<h3>Checking answers</h3>
+<p>Answer quality is checked with guardrails and LLM-as-judge evaluation, and human review is the final step. I don’t treat an LLM judge as ground truth on its own: in <a href="../../llm-judge-ties/">my own study</a>, four LLM judges each named a winner people didn’t back on 5 to 7 of 15 close comparisons.</p>
+
+<h3>Tracing</h3>
+<p>Arize Phoenix traces the copilot’s workflow, which is how a slow, expensive or wrong step gets found.</p>
+
+<h2>How it’s going</h2>
+<ul>
+  <li>Live with a commercial airline, used by about 50 people.</li>
+  <li>The redesigned workflow is 25% faster and 40% cheaper, at <span class="nw">4–5</span> LLM calls instead of 11.</li>
+  <li>The same product logic runs on Claude or LangGraph.</li>
+  <li>Each airline’s own maintenance data is reached through Schema Auto Discovery and controlled database access.</li>
+</ul>
+  </div>
+</div>
+
+<nav class="pager" aria-label="More">
+  <a href="../../#work"><small>Back to</small>Everything I’ve built</a>
+  <a class="next" href="../clinical-appeal-letter-copilot/"><small>Next</small>A clinical appeal letter copilot</a>
+</nav>
+
+</article>
+</main>
+
+<footer class="page site-footer">
+  <p><a href="../../">Ishaan Jain</a> · <a href="mailto:ishaanjain.analytics@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/ishanjain4/">LinkedIn</a> · <a href="https://github.com/ishaan-jain-ai">GitHub</a></p>
+</footer>
+
+</body>
+</html>

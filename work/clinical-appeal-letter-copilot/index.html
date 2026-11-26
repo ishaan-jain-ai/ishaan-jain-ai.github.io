@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A clinical appeal letter copilot · Ishaan Jain</title>
+<meta name="description" content="A GPT and RAG copilot on Azure that generated thousands of clinical appeal letters a month for 100+ users and cut appeal-processing costs by 25%, with patient data de-identified before generation.">
+<meta name="author" content="Ishaan Jain">
+<link rel="canonical" href="https://ishaan-jain-ai.github.io/work/clinical-appeal-letter-copilot/">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="../../assets/style.css">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Ishaan Jain">
+<meta property="og:title" content="A clinical appeal letter copilot">
+<meta property="og:description" content="GPT and RAG on Azure: thousands of letters a month for 100+ users, 25% lower appeal-processing cost, patient data de-identified before generation.">
+<meta property="og:url" content="https://ishaan-jain-ai.github.io/work/clinical-appeal-letter-copilot/">
+<meta property="og:image" content="https://ishaan-jain-ai.github.io/assets/card-home.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://ishaan-jain-ai.github.io/assets/card-home.png">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="page site-header">
+  <a class="name" href="../../">Ishaan Jain</a>
+  <nav aria-label="Site">
+    <a href="../../#work">work</a>
+    <a href="../../#writing">writing</a>
+    <a href="../../now/">now</a>
+    <a href="../../about/">about</a>
+  </nav>
+</header>
+
+<main id="main" class="page">
+<article class="study">
+
+<header class="study-head">
+  <p class="crumb"><a href="../../#work">Things I’ve built</a> / Ensemble Health Partners</p>
+  <h1>A clinical appeal letter copilot</h1>
+  <p class="dek">Thousands of letters a month, drafted from past letters and clinical guidelines.</p>
+</header>
+
+<div class="row">
+  <dl class="facts label">
+    <dt>Where</dt><dd>Ensemble Health Partners</dd>
+    <dt>Role</dt><dd>Lead, Analytics (GenAI &amp; Agentic AI Engineering), Apr 2024 to Apr 2026</dd>
+    <dt>Users</dt><dd>100+, thousands of letters a month</dd>
+    <dt>Data</dt><dd>Clinical documents with protected health information, under HIPAA</dd>
+    <dt>Stack</dt><dd>Azure OpenAI, Azure AI Search, LlamaIndex, Azure AI Document Intelligence, Azure Functions, Blob Storage, Azure ML, Hugging Face, Azure App Service, Azure DevOps</dd>
+  </dl>
+  <div class="body">
+<p class="lede">At Ensemble Health Partners, I designed and delivered a GPT and RAG copilot on Azure for clinical appeal letters. More than 100 people used it to generate thousands of letters a month, and it cut appeal-processing costs by 25%.</p>
+
+<h2>The problem</h2>
+<p>When a payer denies a claim, a clinical appeal letter argues, from the patient’s records, why it should be paid. Each one means reading clinical documents and writing a specific, careful argument, and the volume runs to thousands of letters a month. The letters carry protected health information, so the work falls under HIPAA.</p>
+
+<h2>My part</h2>
+<p>As Lead, Analytics I designed and delivered the copilot and owned its architecture decisions, including how patient data is handled and how letter quality is checked.</p>
+
+<h2>What I built</h2>
+
+<h3>Patient data</h3>
+<p>Patient data was de-identified before letter generation and restored in the final letter for clinical nurse review. The language model drafts from de-identified text; identifiers come back only in the letter the nurse reviews.</p>
+
+<h3>Past letters and clinical guidelines</h3>
+<p>The copilot is retrieval-augmented: for each case it draws on relevant past letters, clinical guidelines and other reference material, so each letter is specific to the case and cites the correct guidelines.</p>
+
+<h3>Checking quality</h3>
+<p>Quality was checked against a golden set for each letter type, built into the solution, before clinical nurses reviewed the letters. Letter types differ in what a good letter has to contain, so one overall score could hide a drop in a single type.</p>
+
+<h3>In production</h3>
+<p>It ran in production on Azure, with Azure DevOps CI/CD pipelines taking changes from development through testing to deployment.</p>
+
+<h2>How it turned out</h2>
+<p>More than 100 people used it to generate thousands of letters a month, and appeal-processing costs fell by 25%. Patient details were restored only at the end, quality was checked against a golden set for each letter type, and clinical nurses reviewed the letters.</p>
+
+<h2>Trade-offs</h2>
+<p><span class="lead-in">De-identifying before generation.</span> The model never saw patient identifiers. In exchange, it drafted without those details, and every identifier had to be restored exactly, in the right place, in the final letter.</p>
+<p><span class="lead-in">A golden set per letter type.</span> A drop in one letter type shows up even when the average looks fine. The cost is more test sets to build and keep current as letter types change.</p>
+<p><span class="lead-in">Nurses sign off.</span> The copilot drafts and clinical staff decide what goes out, so review time still sets the pace.</p>
+  </div>
+</div>
+
+<nav class="pager" aria-label="More">
+  <a href="../aviation-maintenance-copilot/"><small>Previous</small>Copilot MRO</a>
+  <a class="next" href="../enterprise-copilot-agents/"><small>Next</small>From a chatbot MVP to agents for 5,000+ people</a>
+</nav>
+
+</article>
+</main>
+
+<footer class="page site-footer">
+  <p><a href="../../">Ishaan Jain</a> · <a href="mailto:ishaanjain.analytics@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/ishanjain4/">LinkedIn</a> · <a href="https://github.com/ishaan-jain-ai">GitHub</a></p>
+</footer>
+
+</body>
+</html>

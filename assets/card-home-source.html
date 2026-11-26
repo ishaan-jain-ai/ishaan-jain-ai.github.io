@@ -1,0 +1,42 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;500&display=block">
+<style>
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    background-color: #f4f7fb; color: #0d2240; font-family: "IBM Plex Sans", system-ui, sans-serif;
+    background-image: linear-gradient(rgba(47,111,222,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(47,111,222,0.08) 1px, transparent 1px);
+    background-size: 36px 36px;
+  }
+  .card { box-sizing: border-box; width: 1200px; height: 630px; padding: 76px 84px 60px; display: grid; grid-template-columns: 1fr 360px; column-gap: 56px; }
+  .left { display: flex; flex-direction: column; }
+  .tag { font-family: "IBM Plex Mono", monospace; font-size: 22px; color: #1c4fae; }
+  h1 { margin: 16px 0 0; font-size: 84px; line-height: 1; font-weight: 500; letter-spacing: -0.03em; }
+  .line { margin-top: 26px; font-size: 31px; line-height: 1.38; color: #30476a; font-weight: 300; }
+  .foot { margin-top: auto; font-family: "IBM Plex Mono", monospace; font-size: 22px; color: #0d2240; font-weight: 500; }
+  .readout { align-self: center; background: #e7eef7; border: 1.5px solid #d0dcea; border-radius: 10px; padding: 22px 24px; font-family: "IBM Plex Mono", monospace; font-size: 19px; line-height: 1.45; }
+  .readout .t { color: #516683; padding-bottom: 12px; margin-bottom: 14px; border-bottom: 1.5px solid #d0dcea; }
+  .readout .r { display: grid; grid-template-columns: 112px 1fr; margin-bottom: 10px; }
+  .readout .k { color: #1c4fae; }
+  .readout .v { color: #30476a; }
+  .readout b { color: #0d2240; }
+  .ok { color: #157f3b; }
+</style></head>
+<body>
+<div class="card">
+  <div class="left">
+    <div class="tag">[1] AI engineer · 8+ years</div>
+    <h1>Hi, I’m Ishaan.</h1>
+    <div class="line">I build LLM and agent systems that people rely on at work.</div>
+    <div class="foot">ishaan-jain-ai.github.io</div>
+  </div>
+  <div class="readout">
+    <div class="t">results at a glance</div>
+    <div class="r"><span class="k">status</span><span class="v"><span class="ok">●</span> open to roles</span></div>
+    <div class="r"><span class="k">latency</span><span class="v"><b>−25%</b> agent flow</span></div>
+    <div class="r"><span class="k">cost</span><span class="v"><b>−40%</b> same flow</span></div>
+    <div class="r"><span class="k">appeals</span><span class="v"><b>−25%</b> cost</span></div>
+    <div class="r" style="margin-bottom:0"><span class="k">rollout</span><span class="v"><b>5,000+</b> users</span></div>
+  </div>
+</div>
+</body></html>
